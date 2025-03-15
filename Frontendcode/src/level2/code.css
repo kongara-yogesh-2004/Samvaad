@@ -1,0 +1,430 @@
+/* Base styles and theme variables */
+:root {
+  /* Dark theme variables */
+  --dark-bg-primary: #0f1924;
+  --dark-bg-secondary: #15202b;
+  --dark-bg-tertiary: #1a2634;
+  --dark-bg-quaternary: #2a3a4a;
+  --dark-text-primary: #e6e6e6;
+  --dark-text-secondary: #b3b3b3;
+  --dark-border: #0a84ff33;
+  --dark-accent: #0a84ff;
+  --dark-accent-glow: rgba(10, 132, 255, 0.6);
+  --dark-success: #7eff8a;
+  
+  /* Light theme variables */
+  --light-bg-primary: #f8fafc;
+  --light-bg-secondary: #edf2f7;
+  --light-bg-tertiary: #e2e8f0;
+  --light-bg-quaternary: #cbd5e0;
+  --light-text-primary: #1a202c;
+  --light-text-secondary: #4a5568;
+  --light-border: #0a84ff33;
+  --light-accent: #0a84ff;
+  --light-accent-glow: rgba(10, 132, 255, 0.3);
+  --light-success: #48bb78;
+
+  /* Default to dark theme */
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-tertiary: var(--dark-bg-tertiary);
+  --bg-quaternary: var(--dark-bg-quaternary);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --border: var(--dark-border);
+  --accent: var(--dark-accent);
+  --accent-glow: var(--dark-accent-glow);
+  --success: var(--dark-success);
+}
+
+/* Light theme override */
+body.light-mode {
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-tertiary: var(--light-bg-tertiary);
+  --bg-quaternary: var(--light-bg-quaternary);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --border: var(--light-border);
+  --accent: var(--light-accent);
+  --accent-glow: var(--light-accent-glow);
+  --success: var(--light-success);
+}
+
+/* General reset */
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Theme-based classes */
+.dark-theme {
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-tertiary: var(--dark-bg-tertiary);
+  --bg-quaternary: var(--dark-bg-quaternary);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --border: var(--dark-border);
+  --accent: var(--dark-accent);
+  --accent-glow: var(--dark-accent-glow);
+  --success: var(--dark-success);
+}
+
+.light-theme {
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-tertiary: var(--light-bg-tertiary);
+  --bg-quaternary: var(--light-bg-quaternary);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --border: var(--light-border);
+  --accent: var(--light-accent);
+  --accent-glow: var(--light-accent-glow);
+  --success: var(--light-success);
+}
+
+/* Main application styling */
+.app-container {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px var(--accent-glow);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-header {
+  background-color: var(--bg-tertiary);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: var(--bg-quaternary);
+  border: none;
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent);
+  color: white;
+}
+
+/* Glow effect for section titles */
+.glow-text {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.icon-margin {
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+
+/* Scoreboard styles */
+.scoreboard {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--bg-tertiary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--accent-glow);
+  border: 1px solid var(--border);
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Main content layout */
+.main-content {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.left-panel {
+  width: 30%;
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-right: 1px solid var(--border);
+  transition: background-color 0.3s ease;
+}
+
+.right-panel {
+  width: 70%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Progress bar */
+.progress-bar-container {
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: background-color 0.3s ease;
+}
+
+.progress-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: var(--bg-quaternary);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #40c8ff);
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+/* Question list */
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  max-height: 30vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.question-item {
+  padding: 0.8rem 1rem;
+  background-color: var(--bg-tertiary);
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.question-item:hover {
+  background-color: var(--bg-quaternary);
+  transform: translateX(3px);
+}
+
+.question-item.selected {
+  background-color: var(--accent + "33");
+  border-left: 4px solid var(--accent);
+  font-weight: 500;
+}
+
+.question-item.completed {
+  color: var(--success);
+}
+
+.completed-icon {
+  margin-right: 0.5rem;
+  color: var(--success);
+}
+
+/* Difficulty badges */
+.difficulty-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: auto;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.difficulty-badge.easy {
+  background-color: #48bb78;
+  color: white;
+}
+
+.difficulty-badge.medium {
+  background-color: #ecc94b;
+  color: #744210;
+}
+
+.difficulty-badge.hard {
+  background-color: #f56565;
+  color: white;
+}
+
+.difficulty-indicator {
+  margin-bottom: 1rem;
+}
+
+/* Achievements section */
+.achievements-section {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  margin-bottom: 2px;
+  background-color: var(--bg-quaternary);
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.achievement-item.unlocked {
+  opacity: 1;
+  background-color: var(--accent + "33");
+  border-left: 3px solid gold;
+}
+
+/* Question details */
+.question-details {
+  background-color: var(--bg-tertiary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.question-description {
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Code editor section */
+.editor-section {
+  background-color: var(--bg-tertiary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.language-select-container {
+  margin-bottom: 1rem;
+}
+
+.language-select {
+  margin-bottom: 1rem;
+}
+
+/* Run button */
+.run-button {
+  background: linear-gradient(135deg, var(--accent), #0055a4);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.run-button:hover {
+  background: linear-gradient(135deg, #40c8ff, var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--accent-glow);
+}
+
+.run-button:active {
+  transform: translateY(0);
+}
+
+/* Output section */
+.output-section {
+  background-color: var(--bg-tertiary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  flex: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.output-display {
+  background-color: var(--bg-primary);
+  padding: 1rem;
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: 'Source Code Pro', monospace;
+  max-height: 20vh;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--bg-quaternary);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent + "55");
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
