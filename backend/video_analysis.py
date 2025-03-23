@@ -2,7 +2,7 @@ from google import genai
 import time
 import json
 def analysis():
-    client = genai.Client(api_key="AIzaSyDf9MoY9hMfXO3_JnXn5ynum9V7vWDsp5A")
+    client = genai.Client(api_key="")
 
     print("Uploading file...")
     video_file = client.files.upload(file="C:/Users/masge/OneDrive/Desktop/interview bot/recording/recorded-video.webm")
