@@ -5,7 +5,7 @@ import logging
 def speech_to_text(audio_file_path):
     try:
         url = "https://api.sarvam.ai/speech-to-text-translate"
-        api_key = "2eb08a65-79b8-450a-b1e1-2e0f38803075"
+        api_key = ""
 
         if not os.path.exists(audio_file_path):
             logging.error(f"Audio file not found: {audio_file_path}")
