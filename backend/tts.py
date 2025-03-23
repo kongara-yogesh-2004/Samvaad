@@ -16,7 +16,7 @@ def text_to_speech(input_text):
     }
 
     headers = {
-        "api-subscription-key": "2eb08a65-79b8-450a-b1e1-2e0f38803075",
+        "api-subscription-key": "",
         "Content-Type": "application/json"
     }
 
